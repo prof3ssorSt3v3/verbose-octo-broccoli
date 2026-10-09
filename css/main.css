@@ -7,7 +7,7 @@
     --white: #fafafa;
     --black: #111;
 
-    --card-size: 400px;
+    --card-size: 350px;
   }
   *,
   *::before,
@@ -84,16 +84,26 @@
 }
 
 @layer cards {
+  .cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
   .card {
     box-shadow: 0px 0px 2px var(--onPrimary);
     inline-size: var(--card-size);
     background-color: var(--white);
+    cursor: pointer;
+    transition:
+      background-color 200ms linear,
+      rotate 400ms linear;
   }
   .card--selected {
-    background-color: gold;
+    background-color: color-mix(in srgb, var(--primary) 38%, var(--white) 62%);
+    rotate: 2deg;
   }
   .card--selected .card__image {
-    height: 100px;
+    height: 120px;
   }
   .card__image {
     width: 100%;
@@ -101,6 +111,7 @@
     object-fit: cover;
     object-position: center top;
     display: block;
+    transition: height 200ms linear;
   }
   .card__title {
     font-weight: 500;
