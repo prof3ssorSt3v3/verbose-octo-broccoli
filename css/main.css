@@ -89,6 +89,12 @@
     inline-size: var(--card-size);
     background-color: var(--white);
   }
+  .card--selected {
+    background-color: gold;
+  }
+  .card--selected .card__image {
+    height: 100px;
+  }
   .card__image {
     width: 100%;
     height: 200px;
